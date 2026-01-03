@@ -17,7 +17,9 @@ SECRET_KEY = 'django-insecure-m5%ot!wj-ywssf557_*u*zrd)r8l$g11^oy+gxafde@4e6%zdx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['0xronica.pythonanywhere.com']
+ALLOWED_HOSTS = [
+        "0xronica.pythonanywhere.com",        
+]
 
 
 # Application definition
@@ -136,8 +138,8 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-    'REFRESH_TOKEN_LIFETIME': timedelta(minutes=5 ),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(minutes=30),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
     'AUTH_HEADER_TYPES': ('Bearer',),
