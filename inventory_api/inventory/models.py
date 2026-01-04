@@ -1,9 +1,9 @@
-from django.db import models
+from django.db import models 
 from django.conf import settings
 user=settings.AUTH_USER_MODEL
 
 class InventoryItem(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name="inventory_items"
     )
@@ -20,12 +20,12 @@ class InventoryItem(models.Model):
 
 
 class InventoryChangeLog(models.Model):
-    inventory_item = models.ForeignKey(
+    item = models.ForeignKey(
         InventoryItem,
         on_delete=models.CASCADE,
         related_name="change_logs"
     )
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+    changed_by = models.ForeignKey(settings.AUTH_USER_MODEL,
         on_delete=models.SET_NULL,
         null=True
     )

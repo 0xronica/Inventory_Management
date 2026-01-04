@@ -3,7 +3,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import permissions
 from .models import InventoryItem, InventoryChangeLog
-from .serializers import UserSerializer,  InventoryItemSerializer, InventoryChangeLogSerializer
+from inventory.serializers import UserSerializer,  InventoryItemSerializer, InventoryChangeLogSerializer
 from .permissions import IsOwnerOrWorker 
 from django.contrib.auth import get_user_model
 

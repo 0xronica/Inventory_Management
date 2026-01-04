@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/
 
 
 from django.core.wsgi import get_wsgi_application
-
+import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'inventory_api.settings')
 
 application = get_wsgi_application()
